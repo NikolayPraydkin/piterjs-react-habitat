@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>React и legacy</h1>
+        <p>Alexander Avakov</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <div class="text">
+            <h2>React и legacy</h2>
+            <p>Александр Аваков</p>
+        </div>
+        <figure>
+            <img class="cover" src="pictures/intro.png" alt="React legacy">
+        </figure>
+        <style>
+            #cover .text {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            #cover h2 {
+                margin: 0 10px;
+                color: black;
+                text-align: center;
+                font-size: 55px;
+            }
+
+            #cover p {
+                text-align: center;
+                color: black;
+                font-style: italic;
+                font-size: 20px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Ужасы Legacy</h2>
+        <div class="columns two">
+            <ul>
+                <li class="next">Никто не знает, как это работает</li>
+                <li class="next">Сложно поддерживать</li>
+                <li class="next">Тяжело развивать продукт</li>
+                <li class="next">Невозможно тестировать</li>
+                <li class="next">Разработчики грустят</li>
+            </ul>
+            <figure id="monster">
+                <img src="pictures/monster.jpeg" alt="Legacy code monster (Leonardo Brito)">
+            </figure>
+        </div>
+        <style>
+            #monster img {
+                width: 150%;
+                height: 150%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Паниковать</h2>
+        <figure>
+            <img src="pictures/flip.gif" alt="Table flip">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2 id="spaghetti-text">Смириться</h2>
+        <figure>
+            <img class="cover" src="pictures/spaghetti.jpg" alt="Spaghetti">
+        </figure>
+
+        <style>
+            #spaghetti-text {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2 id="burn-text">Написать все с нуля</h2>
+        <figure>
+            <img class="cover" src="pictures/burn.jpg" alt="Burn">
+        </figure>
+        <style>
+            #burn-text {
+                color: white;
+                margin-top: 60px !important;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/refactorman.jpg" alt="Refactorman">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Сделать лучше</h2>
+        <ul>
+            <li class="next">Стандарт кодирования</li>
+            <li class="next">Анализаторы</li>
+            <li class="next">Ревью</li>
+            <li class="next">Современные инструменты</li>
+            <li class="next">Переписывать существующую функциональность и изживать legacy</li>
+            <li class="next">Тестировать</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Angular</h2>
+        <div class="columns two">
+            <figure>
+                <img id="angular" src="pictures/angular.png" alt="Angular">
+            </figure>
+            <div>
+                <ul>
+                    <li class="next">SPA Framework</li>
+                    <li class="next">Тяжело внедрить</li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            #angular {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Angular Elements</h2>
+        <div class="columns two">
+            <figure>
+                <img id="angular-elements" src="pictures/angular-elements.png" alt="Angular Elements">
+            </figure>
+            <div>
+                <ul>
+                    <li class="next">Поддержка браузерами</li>
+                    <li class="next">Размер 200-300 Kb</li>
+                    <li class="next">Сложность</li>
+                    <li class="next">Ivy должен помочь</li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            #angular-elements {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section id="angular-elements-code-slide" class="slide">
+        <figure>
+            <img class="cover" src="pictures/angular-elements-code.png" alt="Angular elements code">
+        </figure>
+
+        <style>
+            #angular-elements-code-slide::after {
+                content: initial;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Vue</h2>
+        <div class="columns two">
+            <figure>
+                <img id="vue" src="pictures/vue.png" alt="Vue">
+            </figure>
+            <ul>
+                <li class="next">Простой в освоении</li>
+                <li class="next">Размер 21 Kb</li>
+                <li class="next">Различные варианты интеграции</li>
+                <li class="next">new Vue({}) для каждого компонента</li>
+                <li class="next">Нужно писать кастомные фабрики для vuex</li>
+            </ul>
+        </div>
+        <style>
+            #vue {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-components.png" alt="Vue components">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-global.png" alt="Vue global">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Vue Custom Element</h2>
+        <div class="columns two">
+            <figure>
+                <img id="vue-custom-element" src="pictures/vue-custom-element.png" alt="Vue Custom Element">
+            </figure>
+            <ul>
+                <li class="next">Решает проблему new Vue({})</li>
+                <li class="next">Native API или Fallback</li>
+                <li class="next">Lazy loading</li>
+                <li class="next">vue-custom-element-vuex</li>
+                <li class="next">Компоненты необходимо добавлять в Vue.config.ignoredElements</li>
+            </ul>
+        </div>
+        <style>
+            #vue-custom-element {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-custom-element-why.png" alt="Why Vue Custom Element">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-custom-element-example.png" alt="Vue Custom Element Example">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-custom-element-example-2.png" alt="Vue Custom Element Example">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>React</h2>
+        <div class="columns two">
+            <figure>
+                <img class="react" src="pictures/react.png" alt="React">
+            </figure>
+            <ul>
+                <li class="next">Лучшие подходы</li>
+                <li class="next">Размер в 30 Kb</li>
+                <li class="next">Вызов ReactDOM.render для каждого компонента</li>
+                <li class="next">Оборачивать каждый компонент в Redux Provider</li>
+            </ul>
+        </div>
+        <style>
+            .react {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/react-web-components.png" alt="React Web Component">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>React Habitat</h2>
+        <div class="columns two">
+            <figure>
+                <img class="react" src="pictures/react.png" alt="React">
+            </figure>
+            <ul>
+                <li class="next">Маленький размер 4 Kb</li>
+                <li class="next">Code-splitting</li>
+                <li class="next">Возможность создавать кастомные фабрики</li>
+                <li class="next">react-habitat-redux</li>
+                <li class="next">Proxy</li>
+                <li class="next">Различные типы props</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/react-habitat-example.png" alt="React Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/react-habitat-example-2.png" alt="React Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/react-habitat-example-3.png" alt="React Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Preact Habitat</h2>
+        <div class="columns two">
+            <figure>
+                <img id="preact-habitat" src="pictures/preact-habitat.gif" alt="Preact Habitat">
+            </figure>
+            <ul>
+                <li>Маленький размер 4 Kb</li>
+                <li>Идеальный старт для создания виджетов</li>
+                <li>Самый простой API</li>
+                <li>Нет кастомных фабрик</li>
+            </ul>
+        </div>
+        <style>
+            #preact-habitat {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/preact-example.png" alt="Preact Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/preact-example-2.png" alt="Preact Habitat">
+        </figure>
+    </section>
+
+    <section class="slide" id="see-more">
+        <h2 class="shout grow">Спасибо</h2>
+        <style>
+            #see-more h2 {
+                font-size: 300px
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://angular.io/guide/elements">https://angular.io/guide/elements</a></li>
+            <li><a href="https://github.com/karol-f/vue-custom-element">https://github.com/karol-f/vue-custom-element</a></li>
+            <li><a href="https://github.com/karol-f/vue-custom-element-example-vuex">https://github.com/karol-f/vue-custom-element-example-vuex</a></li>
+            <li><a href="https://reactjs.org/docs/web-components.html">https://reactjs.org/docs/web-components.html</a></li>
+            <li><a href="https://github.com/DeloitteDigitalAPAC/react-habitat">https://github.com/DeloitteDigitalAPAC/react-habitat</a></li>
+            <li><a href="https://github.com/DeloitteDigitalAPAC/react-habitat-redux">https://github.com/DeloitteDigitalAPAC/react-habitat-redux</a></li>
+            <li><a href="https://codesandbox.io/s/6yo23rl63w">https://codesandbox.io/s/6yo23rl63w</a></li>
+            <li><a href="https://github.com/zouhir/preact-habitat">https://github.com/zouhir/preact-habitat</a></li>
+        </ul>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>
