@@ -49,6 +49,30 @@
     </section>
 
     <section class="slide">
+        <h2>Немного о себе</h2>
+        <div class="columns two">
+            <figure id="me">
+                <img src="pictures/me.jpg" alt="Alexander Avakov">
+            </figure>
+            <ul>
+                <li>Fullstack разработчик</li>
+                <li>Начинал с PHP</li>
+                <li>Фронтенд начал с Vue</li>
+                <li class="next">Потом React Native</li>
+                <li class="next">А потом просто React</li>
+                <li class="next">А потом еще и Angular</li>
+                <li class="next">Хобби - гитара 🎸</li>
+            </ul>
+        </div>
+        <style>
+            #me img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
         <h2>Ужасы Legacy</h2>
         <div class="columns two">
             <ul>
@@ -131,6 +155,7 @@
                 <ul>
                     <li class="next">SPA Framework</li>
                     <li class="next">Тяжело внедрить</li>
+                    <li class="next">Zone already loaded</li>
                 </ul>
             </div>
         </div>
@@ -218,10 +243,11 @@
                 <img id="vue-custom-element" src="pictures/vue-custom-element.png" alt="Vue Custom Element">
             </figure>
             <ul>
+                <li class="next">Размер 9 Kb</li>
                 <li class="next">Решает проблему new Vue({})</li>
-                <li class="next">Native API или Fallback</li>
+                <li class="next">Native API или Polyfill</li>
                 <li class="next">Lazy loading</li>
-                <li class="next">vue-custom-element-vuex</li>
+                <li class="next">Фабрик нет</li>
                 <li class="next">Компоненты необходимо добавлять в Vue.config.ignoredElements</li>
             </ul>
         </div>
@@ -252,6 +278,39 @@
     </section>
 
     <section class="slide">
+        <h2>Preact Habitat</h2>
+        <div class="columns two">
+            <figure>
+                <img id="preact-habitat" src="pictures/preact-habitat.gif" alt="Preact Habitat">
+            </figure>
+            <ul>
+                <li class="next">Маленький размер 4 Kb</li>
+                <li class="next">Идеальный старт для создания виджетов</li>
+                <li class="next">Самый простой API</li>
+                <li class="next">Нет фабрик</li>
+            </ul>
+        </div>
+        <style>
+            #preact-habitat {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/preact-example.png" alt="Preact Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/preact-example-2.png" alt="Preact Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
         <h2>React</h2>
         <div class="columns two">
             <figure>
@@ -261,7 +320,7 @@
                 <li class="next">Лучшие подходы</li>
                 <li class="next">Размер в 30 Kb</li>
                 <li class="next">Вызов ReactDOM.render для каждого компонента</li>
-                <li class="next">Оборачивать каждый компонент в Redux Provider</li>
+                <li class="next">Добавлять Providers, context и т.п. в каждый компонент</li>
             </ul>
         </div>
         <style>
@@ -285,7 +344,7 @@
                 <img class="react" src="pictures/react.png" alt="React">
             </figure>
             <ul>
-                <li class="next">Маленький размер 4 Kb</li>
+                <li class="next">Размер библиотеки 4 Kb</li>
                 <li class="next">Code-splitting</li>
                 <li class="next">Возможность создавать кастомные фабрики</li>
                 <li class="next">react-habitat-redux</li>
@@ -296,9 +355,13 @@
     </section>
 
     <section class="slide">
-        <figure>
-            <img class="cover" src="pictures/react-habitat-example.png" alt="React Habitat">
-        </figure>
+        <h2>Типы свойств</h2>
+        <ul>
+            <li class="next"><code>data-props</code> JSON-encoded</li>
+            <li class="next"><code>data-prop</code> JSON-encoded</li>
+            <li class="next"><code>data-n-prop</code> numeric</li>
+            <li class="next"><code>data-r-prop</code> window variable</li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -309,40 +372,31 @@
 
     <section class="slide">
         <figure>
+            <img class="cover" src="pictures/react-habitat-example.png" alt="React Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
             <img class="cover" src="pictures/react-habitat-example-3.png" alt="React Habitat">
         </figure>
     </section>
 
     <section class="slide">
-        <h2>Preact Habitat</h2>
-        <div class="columns two">
-            <figure>
-                <img id="preact-habitat" src="pictures/preact-habitat.gif" alt="Preact Habitat">
-            </figure>
-            <ul>
-                <li class="next">Маленький размер 4 Kb</li>
-                <li class="next">Идеальный старт для создания виджетов</li>
-                <li class="next">Самый простой API</li>
-                <li class="next">Нет кастомных фабрик</li>
-            </ul>
-        </div>
-        <style>
-            #preact-habitat {
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-    </section>
-
-    <section class="slide">
         <figure>
-            <img class="cover" src="pictures/preact-example.png" alt="Preact Habitat">
+            <img class="cover" src="pictures/react-habitat-example-4.png" alt="React Habitat">
         </figure>
     </section>
 
     <section class="slide">
         <figure>
-            <img class="cover" src="pictures/preact-example-2.png" alt="Preact Habitat">
+            <img class="cover" src="pictures/react-habitat-example-5.png" alt="React Habitat">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/react-router.png" alt="React Habitat">
         </figure>
     </section>
 
@@ -357,16 +411,18 @@
 
     <section class="slide">
         <h2>Links</h2>
-        <ul>
-            <li><a href="https://angular.io/guide/elements">https://angular.io/guide/elements</a></li>
-            <li><a href="https://github.com/karol-f/vue-custom-element">https://github.com/karol-f/vue-custom-element</a></li>
-            <li><a href="https://github.com/karol-f/vue-custom-element-example-vuex">https://github.com/karol-f/vue-custom-element-example-vuex</a></li>
-            <li><a href="https://reactjs.org/docs/web-components.html">https://reactjs.org/docs/web-components.html</a></li>
-            <li><a href="https://github.com/DeloitteDigitalAPAC/react-habitat">https://github.com/DeloitteDigitalAPAC/react-habitat</a></li>
-            <li><a href="https://github.com/DeloitteDigitalAPAC/react-habitat-redux">https://github.com/DeloitteDigitalAPAC/react-habitat-redux</a></li>
-            <li><a href="https://codesandbox.io/s/6yo23rl63w">https://codesandbox.io/s/6yo23rl63w</a></li>
-            <li><a href="https://github.com/zouhir/preact-habitat">https://github.com/zouhir/preact-habitat</a></li>
-        </ul>
+        <figure>
+            <img class="cover" src="pictures/qr-code.gif" alt="QR Code">
+        </figure>
+    </section>
+
+    <section class="slide" id="questions">
+        <h2 class="shout grow">Вопросы</h2>
+        <style>
+            #questions h2 {
+                font-size: 300px
+            }
+        </style>
     </section>
 
     <footer class="badge">
