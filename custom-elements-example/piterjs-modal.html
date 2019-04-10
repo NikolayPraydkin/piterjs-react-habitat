@@ -1,0 +1,88 @@
+<body>
+<template id="piterjs-modal-template">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="piterjs-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        </div>
+        <div class="modal-body">
+          <div class="piterjs-modal__text">Hello, PiterJS</div>
+          <input class="piterjs-modal__input" autofocus value="Hello, PiterJS" />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary piterjs-modal__close"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn piterjs-modal__open">Open</button>
+</template>
+<script>
+    const localDoc = (document._currentScript || document.currentScript).ownerDocument;
+
+    class PiterJsModal extends HTMLElement {
+        static MODAL_ID = 1;
+
+        constructor() {
+            super();
+
+            this.modalId = PiterJsModal.MODAL_ID++;
+
+            const labelId = `piterjs-modal-label-${this.modalId}`;
+            const template = localDoc.querySelector('#piterjs-modal-template').content.cloneNode(true);
+            this.modal = template.querySelector('.modal');
+            this.openButton = template.querySelector('.piterjs-modal__open');
+            this.closeButton = template.querySelector('.piterjs-modal__close');
+            this.text = template.querySelector('.piterjs-modal__text');
+            this.input = template.querySelector('.piterjs-modal__input');
+
+            template.querySelector('.modal-title').modalId = labelId;
+            this.modal.setAttribute('aria-labelled-by', labelId);
+
+            const shadowRoot = this.attachShadow({ mode: 'open' });
+            shadowRoot.appendChild(template);
+        }
+
+        connectedCallback() {
+            this.openButton.classList.add(`btn-${this.getAttribute('button-style')}`);
+            this.input.addEventListener('input', this.onInputChange);
+            this.openButton.addEventListener('click', this.onOpen);
+            this.closeButton.addEventListener('click', this.onClose);
+        }
+
+        disconnectedCallback() {
+            this.input.removeEventListener('input', this.onInputChange);
+            this.openButton.removeEventListener('click', this.onOpen);
+            this.closeButton.removeEventListener('click', this.onClose);
+        }
+
+        onInputChange = ({ target: { value } }) => {
+            this.text.textContent = value;
+        };
+
+        onOpen = () => {
+            this.modal.style.display = 'block';
+            setTimeout(() => {
+                this.modal.classList.add('show');
+            });
+        };
+
+        onClose = () => {
+            this.modal.classList.remove('show');
+            setTimeout(() => {
+                this.modal.style.display = null;
+            }, 300);
+        };
+    }
+
+    window.customElements.define('piterjs-modal', PiterJsModal);
+</script>
+</body>
