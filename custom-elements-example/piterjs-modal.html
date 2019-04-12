@@ -39,6 +39,7 @@
             const labelId = `piterjs-modal-label-${this.modalId}`;
             const template = localDoc.querySelector('#piterjs-modal-template').content.cloneNode(true);
             this.modal = template.querySelector('.modal');
+            this.titleElement = template.querySelector('.modal-title');
             this.openButton = template.querySelector('.piterjs-modal__open');
             this.closeButton = template.querySelector('.piterjs-modal__close');
             this.text = template.querySelector('.piterjs-modal__text');
@@ -51,8 +52,17 @@
             shadowRoot.appendChild(template);
         }
 
+        get buttonStyle() {
+            return this.getAttribute('button-style') || 'btn-default';
+        }
+
+        get title() {
+            return this.getAttribute('modal-title') || 'Hello, PiterJS!';
+        }
+
         connectedCallback() {
             this.openButton.classList.add(`btn-${this.getAttribute('button-style')}`);
+            this.titleElement.textContent = this.title;
             this.input.addEventListener('input', this.onInputChange);
             this.openButton.addEventListener('click', this.onOpen);
             this.closeButton.addEventListener('click', this.onClose);
