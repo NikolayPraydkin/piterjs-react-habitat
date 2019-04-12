@@ -44,7 +44,7 @@
             this.text = template.querySelector('.piterjs-modal__text');
             this.input = template.querySelector('.piterjs-modal__input');
 
-            template.querySelector('.modal-title').modalId = labelId;
+            template.querySelector('.modal-title').id = labelId;
             this.modal.setAttribute('aria-labelled-by', labelId);
 
             const shadowRoot = this.attachShadow({ mode: 'open' });
