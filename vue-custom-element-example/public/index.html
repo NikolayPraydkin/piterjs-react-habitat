@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Vue Custom Element Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <piterjs-modal></piterjs-modal>
+    <button id="more-button" class="btn btn-info">More</button>
+    <script>
+        const buttonStyles = ['default', 'info', 'warning', 'danger', 'success'];
+
+        document.querySelector('#more-button').addEventListener('click', () => {
+            const modal = document.createElement('piterjs-modal');
+            const index = Math.round(Math.random() * buttonStyles.length) - 1;
+
+            modal.setAttribute('color', buttonStyles[index]);
+            document.body.appendChild(modal);
+        });
+    </script>
+  </body>
+</html>
