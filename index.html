@@ -20,7 +20,7 @@
 
     <section class="slide" id="cover">
         <div class="text">
-            <h2>React и legacy</h2>
+            <h2>Фреймворки<br>в legacy</h2>
             <p>Александр Аваков</p>
         </div>
         <figure>
@@ -95,6 +95,10 @@
     </section>
 
     <section class="slide">
+        <h2 class="shout">Что делать?</h2>
+    </section>
+
+    <section class="slide">
         <h2>Паниковать</h2>
         <figure>
             <img src="pictures/flip.gif" alt="Table flip">
@@ -102,7 +106,10 @@
     </section>
 
     <section class="slide">
-        <h2 id="spaghetti-text">Смириться</h2>
+        <h2 id="spaghetti-text">
+            <strike>Полюбить лапшу</strike><br>
+            Смириться
+        </h2>
         <figure>
             <img class="cover" src="pictures/spaghetti.jpg" alt="Spaghetti">
         </figure>
@@ -110,6 +117,7 @@
         <style>
             #spaghetti-text {
                 color: white;
+                margin: -30px 0 0 -40px;
             }
         </style>
     </section>
@@ -146,6 +154,51 @@
     </section>
 
     <section class="slide">
+        <h2 class="shout">Web-компоненты</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Инкапсуляция</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Пример</h2>
+        <ul>
+            <li class="next">Модальное окно Bootstrap</li>
+            <li class="next">Возможность создать много таких окон</li>
+            <li class="next">Простой пример реактивности внутри модального окна</li>
+            <li class="next">Продемонстрировать возможность передачи свойств</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Custom Elements</h2>
+        <div class="columns two">
+            <figure id="custom-elements">
+                <img src="pictures/custom-elements.png" alt="Custom Elements">
+            </figure>
+            <ul>
+                <li class="next">Native way</li>
+                <li class="next">Никаких библиотек</li>
+                <li class="next">Плохая поддержка браузерами</li>
+                <li class="next">Много кода</li>
+            </ul>
+        </div>
+        <style>
+            #custom-elements img {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/custom-elements-example.png" alt="Custom elements">
+        </figure>
+    </section>
+
+    <section class="slide">
         <h2>Angular</h2>
         <div class="columns two">
             <figure>
@@ -175,8 +228,9 @@
             </figure>
             <div>
                 <ul>
-                    <li class="next">Поддержка браузерами</li>
+                    <li class="next">Плохая поддержка браузерами</li>
                     <li class="next">Размер 200-300 Kb</li>
+                    <li class="next">Нет Lifecycle</li>
                     <li class="next">Сложность</li>
                     <li class="next">Ivy должен помочь</li>
                 </ul>
@@ -190,16 +244,28 @@
         </style>
     </section>
 
-    <section id="angular-elements-code-slide" class="slide">
+    <section class="slide">
         <figure>
-            <img class="cover" src="pictures/angular-elements-code.png" alt="Angular elements code">
+            <img class="cover" src="pictures/angular-elements-example.png" alt="Angular elements code">
         </figure>
+    </section>
 
-        <style>
-            #angular-elements-code-slide::after {
-                content: initial;
-            }
-        </style>
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/angular-elements-example-2.png" alt="Angular elements code">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/angular-elements-example-3.png" alt="Angular elements code">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/angular-elements-example-4.png" alt="Angular elements code">
+        </figure>
     </section>
 
     <section class="slide">
@@ -244,11 +310,11 @@
             </figure>
             <ul>
                 <li class="next">Размер 9 Kb</li>
-                <li class="next">Решает проблему new Vue({})</li>
                 <li class="next">Native API или Polyfill</li>
+                <li class="next">Lifecycle</li>
                 <li class="next">Lazy loading</li>
-                <li class="next">Фабрик нет</li>
-                <li class="next">Компоненты необходимо добавлять в Vue.config.ignoredElements</li>
+                <li class="next">Vue Custom Element Bundler</li>
+                <li class="next">Vue.config.ignoredElements</li>
             </ul>
         </div>
         <style>
@@ -278,16 +344,42 @@
     </section>
 
     <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-custom-element-example-3.png" alt="Vue Custom Element Example">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-custom-element-example-4.png" alt="Vue Custom Element Example">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-custom-element-async-example.png" alt="Vue Custom Element Example">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img class="cover" src="pictures/vue-custom-element-async-example-2.png" alt="Vue Custom Element Example">
+        </figure>
+    </section>
+
+    <section class="slide">
         <h2>Preact Habitat</h2>
         <div class="columns two">
             <figure>
                 <img id="preact-habitat" src="pictures/preact-habitat.gif" alt="Preact Habitat">
             </figure>
             <ul>
+                <li class="next">Самое красивое лого</li>
                 <li class="next">Маленький размер 4 Kb</li>
                 <li class="next">Идеальный старт для создания виджетов</li>
                 <li class="next">Самый простой API</li>
                 <li class="next">Нет фабрик</li>
+                <li class="next">Нет Lifecycle</li>
             </ul>
         </div>
         <style>
@@ -350,6 +442,7 @@
                 <li class="next">react-habitat-redux</li>
                 <li class="next">Proxy</li>
                 <li class="next">Различные типы props</li>
+                <li class="next">Lifecycle</li>
             </ul>
         </div>
     </section>
@@ -392,6 +485,10 @@
         <figure>
             <img class="cover" src="pictures/react-habitat-example-5.png" alt="React Habitat">
         </figure>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Что дальше?</h2>
     </section>
 
     <section class="slide">
