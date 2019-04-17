@@ -30,20 +30,12 @@ export class PiterJsModal extends PureComponent<Props, State> {
   render() {
     return (
       <>
-        <Button
-          onClick={this.handleToggle}
-          color={this.props.color}
-        >
-          Be awesome
-        </Button>
+        <Button color={this.props.color} onClick={this.handleToggle}>Be awesome</Button>
         <Modal isOpen={this.state.opened}>
           <ModalHeader>{this.props.title}</ModalHeader>
           <ModalBody>
             {this.state.value}
-            <Input
-              onChange={this.handleChange}
-              value={this.state.value}
-            />
+            <Input onChange={this.handleChange} value={this.state.value} />
           </ModalBody>
           <ModalFooter>
             <Button onClick={this.handleToggle}>Bye, bye</Button>
