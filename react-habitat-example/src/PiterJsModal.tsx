@@ -1,60 +1,55 @@
-import * as React from "react";
-import { PureComponent } from "react";
-import {
-  Button,
-  Input,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "reactstrap";
+import * as React from 'react';
+import { PureComponent } from 'react';
+import { Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 type Props = {
-  initialValue: string;
-  onClose: () => void;
-  opened: boolean;
-  title: string;
+  color?: 'primary' | 'secondary' | 'danger',
+  initialValue: string,
+  proxy: HTMLInputElement,
+  title: string,
 };
 
 type State = {
-  value: string;
+  opened: boolean,
+  value: string,
 };
 
 export class PiterJsModal extends PureComponent<Props, State> {
   state = {
-    value: this.props.initialValue
+    opened: false,
+    value: this.props.initialValue,
   };
 
-  input?: HTMLInputElement;
-
-  handleChange = ({ target: { value } }) => this.setState({ value });
-
-  handleOpened = () => {
-    if (this.input) {
-      this.input.focus();
-    }
+  handleChange = ({ currentTarget: { value } }: React.FormEvent<HTMLInputElement>) => {
+    this.setState({ value });
+    this.props.proxy.value = value;
   };
 
-  handleRef = (input: HTMLInputElement) => {
-    this.input = input;
-  };
+  handleToggle = () => this.setState((prevState) => ({ opened: !prevState.opened }));
 
   render() {
     return (
-      <Modal isOpen={this.props.opened} onOpened={this.handleOpened}>
-        <ModalHeader>{this.props.title}</ModalHeader>
-        <ModalBody>
-          {this.state.value}
-          <Input
-            innerRef={this.handleRef}
-            onChange={this.handleChange}
-            value={this.state.value}
-          />
-        </ModalBody>
-        <ModalFooter>
-          <Button onClick={this.props.onClose}>Bye, bye</Button>
-        </ModalFooter>
-      </Modal>
+      <>
+        <Button
+          onClick={this.handleToggle}
+          color={this.props.color}
+        >
+          Be awesome
+        </Button>
+        <Modal isOpen={this.state.opened}>
+          <ModalHeader>{this.props.title}</ModalHeader>
+          <ModalBody>
+            {this.state.value}
+            <Input
+              onChange={this.handleChange}
+              value={this.state.value}
+            />
+          </ModalBody>
+          <ModalFooter>
+            <Button onClick={this.handleToggle}>Bye, bye</Button>
+          </ModalFooter>
+        </Modal>
+      </>
     );
   }
 }

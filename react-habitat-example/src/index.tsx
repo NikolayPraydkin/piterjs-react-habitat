@@ -1,12 +1,18 @@
-import * as ReactHabitat from "react-habitat";
-import { PiterJsModalButton } from "./PiterJsModalButton";
+import * as ReactHabitat from 'react-habitat';
+import { PiterJsModal } from './PiterJsModal';
+
+declare global {
+  interface Window {
+    updateHabitat: () => void;
+  }
+}
 
 class Bootstrapper extends ReactHabitat.Bootstrapper {
   constructor() {
     super();
 
     const builder = new ReactHabitat.ContainerBuilder();
-    builder.register(PiterJsModalButton).as("PiterJsModalButton");
+    builder.register(PiterJsModal).as('PiterJsModal');
 
     this.setContainer(builder.build());
 

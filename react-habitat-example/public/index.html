@@ -2,46 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <title>React App</title>
+    <title>React Habitat Example</title>
   </head>
   <body>
     <button class="btn btn-secondary" id="paste-button">More</button>
     <br />
-    <div
-      data-component="PiterJsModalButton"
+    <input
+      type="hidden"
+      data-component="PiterJsModal"
       data-r-prop-title="piterJsModalTitle"
       data-prop-initial-value="OMG"
-    >
-      Loading...
-    </div>
+    />
     <script>
-      window.piterJsModalTitle = "Hello, PiterJs";
-      $(function() {
-        $(document).on("click", "#paste-button", function() {
-          var div = $(`
-            <div
-              data-component="PiterJsModalButton"
-              data-prop-color="danger"
-              data-r-prop-title="piterJsModalTitle"
-              data-prop-initial-value="OMG"
-            ></div>
-          `);
-          $("body").append(div);
-          window.updateHabitat();
-        });
+      window.piterJsModalTitle = 'Hello, PiterJs';
+
+      const buttonStyles = ['default', 'info', 'warning', 'danger', 'success'];
+
+      $(document).on('click', '#paste-button', () => {
+        const index = Math.round(Math.random() * buttonStyles.length) - 1;
+
+        $('body').append($(`
+          <div
+            data-component="PiterJsModal"
+            data-prop-color="${buttonStyles[index]}"
+            data-r-prop-title="piterJsModalTitle"
+            data-prop-initial-value="OMG"
+          ></div>
+        `));
+
+        window.updateHabitat();
       });
     </script>
   </body>
