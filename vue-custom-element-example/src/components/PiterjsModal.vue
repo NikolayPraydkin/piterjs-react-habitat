@@ -16,9 +16,6 @@
       data: () => ({
           text: 'Hello, PiterJS'
       }),
-      mounted() {
-          console.log(this.title);
-      },
       methods: {
           toggle() {
               this.$refs.piterJsModal.toggle()
